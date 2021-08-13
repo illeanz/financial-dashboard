@@ -54,12 +54,13 @@ CREATE TABLE `account_history` (
 );
 
 CREATE TABLE `account_transactions` (
+  `trans_id` int NOT NULL AUTO_INCREMENT,
   `aid` int NOT NULL,
   `date` date NOT NULL,
   `trans_type` varchar(45) NOT NULL,
   `trans_desc` varchar(300),
   `value` double NOT NULL,
-  PRIMARY KEY (`aid`,`date`),
+  PRIMARY KEY (`trans_id`),
   FOREIGN KEY (`aid`) REFERENCES `accounts` (`aid`) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
@@ -91,5 +92,5 @@ insert into account_history values(12345, '2021-05-31', 100.00);
 insert into account_history values(12345, '2021-02-28', 300.00);
 insert into account_history values(12345, '2020-08-31', 900.00);
 
-insert into account_transactions values(67890, '2021-08-31', "shopping", "for my kid's bday", -200.00);
-insert into account_transactions values(67890, '2021-08-30', "deposit", "pay check from citi", 800.00);
+insert into account_transactions values(13579, 67890, '2021-08-31', "shopping", "for my kid's bday", -200.00);
+insert into account_transactions values(24680, 67890, '2021-08-30', "deposit", "pay check from citi", 800.00);
