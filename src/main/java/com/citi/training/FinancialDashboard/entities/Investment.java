@@ -8,7 +8,6 @@ import java.io.Serializable;
 public class Investment implements Serializable{
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="aid")
     private int accountId;
 

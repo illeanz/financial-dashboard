@@ -7,12 +7,15 @@ import java.util.Date;
 @Entity
 @Table(name = "account_transactions")
 public class AccountTransaction implements Serializable{
+
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @Column(name="trans_id")
+    private int transactionId;
+
     @Column(name="aid")
     private int accountId;
 
-    @Id
     @Column(name="date")
     private Date date;
 

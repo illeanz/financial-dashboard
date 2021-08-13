@@ -7,6 +7,17 @@ import java.io.Serializable;
 @Entity
 @Table(name = "banking")
 public class BankingRecord implements Serializable {
+
+    @Id
+    @Column(name="aid")
+    private int accountId;
+
+    @Column(name="banking_type")
+    private BankingType bankingType;
+
+    @Column(name="interest_rate")
+    private Double interestRate;
+
     public int getAccountId() {
         return accountId;
     }
@@ -30,17 +41,6 @@ public class BankingRecord implements Serializable {
     public void setInterestRate(Double interestRate) {
         this.interestRate = interestRate;
     }
-
-    @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name="aid")
-    private int accountId;
-
-    @Column(name="banking_type")
-    private BankingType bankingType;
-
-    @Column(name="interest_rate")
-    private Double interestRate;
 }
 
 

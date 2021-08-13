@@ -16,14 +16,6 @@ public class Account implements Serializable {
     @Column(name="uid")
     private int userId;
 
-    public int getAccountId() {
-        return accountId;
-    }
-
-    public void setAccountId(int accountId) {
-        this.accountId = accountId;
-    }
-
     @Column(name="name")
     private String name;
 
@@ -35,4 +27,14 @@ public class Account implements Serializable {
 
     @Column(name="value")
     private int value;
+
+    public int getAccountId() {
+        return accountId;
+    }
+
+    public void setAccountId(int accountId) {
+        this.accountId = accountId;
+    }
+
+
 }

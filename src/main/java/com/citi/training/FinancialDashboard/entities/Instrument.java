@@ -6,7 +6,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "instruments")
-public class Intrument {
+public class Instrument {
 
     @Id
     @Column(name="symbol")
