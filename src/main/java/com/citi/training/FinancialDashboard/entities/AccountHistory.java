@@ -9,7 +9,6 @@ import java.util.Date;
 public class AccountHistory implements Serializable{
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="aid")
     private int accountId;
 
