@@ -1,6 +1,6 @@
-package com.citi.training.SampleSpringBoot.repo;
+package com.citi.training.FinancialDashboard.repo;
 
-import com.citi.training.SampleSpringBoot.entities.Movie;
+import com.citi.training.FinancialDashboard.entities.Movie;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Collection;

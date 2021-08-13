@@ -1,7 +1,7 @@
-package com.citi.training.SampleSpringBoot.rest;
+package com.citi.training.FinancialDashboard.rest;
 
-import com.citi.training.SampleSpringBoot.entities.Movie;
-import com.citi.training.SampleSpringBoot.service.MovieService;
+import com.citi.training.FinancialDashboard.entities.Movie;
+import com.citi.training.FinancialDashboard.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,10 +1,10 @@
-package com.citi.training.SampleSpringBoot;
+package com.citi.training.FinancialDashboard;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SampleSpringBootApplicationTests {
+class FinancialDashboardApplicationTests {
 
 	@Test
 	void contextLoads() {

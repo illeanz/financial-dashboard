@@ -1,4 +1,4 @@
-package com.citi.training.SampleSpringBoot.entities;
+package com.citi.training.FinancialDashboard.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;

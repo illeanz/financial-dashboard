@@ -1,7 +1,7 @@
-package com.citi.training.SampleSpringBoot.service;
+package com.citi.training.FinancialDashboard.service;
 
-import com.citi.training.SampleSpringBoot.entities.Movie;
-import com.citi.training.SampleSpringBoot.repo.MovieRepository;
+import com.citi.training.FinancialDashboard.entities.Movie;
+import com.citi.training.FinancialDashboard.repo.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

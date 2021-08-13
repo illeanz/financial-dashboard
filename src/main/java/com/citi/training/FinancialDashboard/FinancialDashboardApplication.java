@@ -1,13 +1,13 @@
-package com.citi.training.SampleSpringBoot;
+package com.citi.training.FinancialDashboard;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SampleSpringBootApplication {
+public class FinancialDashboardApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SampleSpringBootApplication.class, args);
+		SpringApplication.run(FinancialDashboardApplication.class, args);
 	}
 
 }
