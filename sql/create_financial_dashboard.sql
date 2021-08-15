@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS conygre;
 CREATE DATABASE IF NOT EXISTS conygre;
 use conygre;
 
@@ -27,10 +28,18 @@ CREATE TABLE `accounts` (
 );
 
 
-CREATE TABLE `banking` (
+CREATE TABLE `banking_acc_info` (
   `aid` int NOT NULL,
   `banking_type` varchar(45) NOT NULL,
   `interest_rate` double NOT NULL,
+  PRIMARY KEY (`aid`),
+  FOREIGN KEY (`aid`) REFERENCES `accounts` (`aid`) ON DELETE RESTRICT ON UPDATE CASCADE
+);
+
+CREATE TABLE `investment_acc_info` (
+  `aid` int NOT NULL,
+  `investment_type` varchar(45) NOT NULL,
+  `cash` double NOT NULL,
   PRIMARY KEY (`aid`),
   FOREIGN KEY (`aid`) REFERENCES `accounts` (`aid`) ON DELETE RESTRICT ON UPDATE CASCADE
 );
@@ -67,7 +76,7 @@ CREATE TABLE `account_transactions` (
 insert into users values(1001, "password1");
 insert into users values(1002, "password2");
 
-insert into accounts values(12345, 1001, "A's investment acc", "Investment", 2000.00);
+insert into accounts values(12345, 1001, "A's investment acc", "Investment", 30000.00);
 insert into accounts values(67890, 1001, "A's banking acc", "Banking", 5000.45);
 insert into accounts values(13579, 1001, "A's banking acc 2", "Banking", 75.90);
 
@@ -77,8 +86,10 @@ insert into instruments values("VSP.TO", "VANGUARD SP 500 INDEX ETF CAD H", "ETF
 insert into instruments values("^MID", "S&P MID CAP 400 INDEX", "Index", 2734.01);
 insert into instruments values("JLGMX", "JPMorgan Large Cap Growth Fund", "Mutual Fund", 71.20);
 
-insert into banking values(67890, "Checkings", 0.05);
-insert into banking values(13579, "Savings", 0.07);
+insert into banking_acc_info values(67890, "Checkings", 0.05);
+insert into banking_acc_info values(13579, "Savings", 0.07);
+
+insert into investment_acc_info values(12345, "RRSP", 1000);
 
 insert into investments values(12345, "GME", 100, 140.00);
 insert into instruments values(12345, "VSP.TO", 200, 75.00);
