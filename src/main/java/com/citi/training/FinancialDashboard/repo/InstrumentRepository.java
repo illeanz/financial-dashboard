@@ -11,8 +11,8 @@ public interface InstrumentRepository extends JpaRepository<Instrument, Integer>
     Instrument findBySymbol(String symbol);
 
     Collection<Instrument> findByInstrumentType(InstrumentType instrumentType);
-
-    Collection<Instrument> findTopWinners(int limit);
-
-    Collection<Instrument> findTopLosers(int limit);
+//
+//    Collection<Instrument> findTopWinners(int limit);
+//
+//    Collection<Instrument> findTopLosers(int limit);
 }

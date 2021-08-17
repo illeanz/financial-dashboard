@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Collection;
 
 public interface AccountRepository extends JpaRepository<Account, Integer> {
-    Collection<Account> findByUserId(int userId);
+//    Collection<Account> findByUserId(int userId);
 
     Account findByAccountId(int accountId);
 

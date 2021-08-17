@@ -6,6 +6,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "account_history")
+@IdClass(AccountHistoryPK.class)
 public class AccountHistory implements Serializable{
 
     @Id
@@ -44,3 +45,4 @@ public class AccountHistory implements Serializable{
     }
 
 }
+
