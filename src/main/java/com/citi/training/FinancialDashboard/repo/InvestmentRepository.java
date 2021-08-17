@@ -9,9 +9,9 @@ import java.util.Collection;
 
 public interface InvestmentRepository extends JpaRepository<Investment, Integer> {
     // across all accounts
-    @Query(value = "SELECT a.uid, a.aid, a.acc_name, i.symbol, i.instr_name, i.instr_type, i.position, i.avg_price, i.market_price" +
-                "FROM invested_instruments i" +
-                "INNER JOIN investment_accounts a ON i.aid = a.aid" +
+    @Query(value = "SELECT a.uid, a.aid, a.acc_name, i.symbol, i.instr_name, i.instr_type, i.position, i.avg_price, i.market_price " +
+                "FROM invested_instruments i " +
+                "INNER JOIN investment_accounts a ON i.aid = a.aid " +
                 "WHERE a.uid = :uid",
             nativeQuery = true)
     Collection<Investment> findByUserId(@Param("uid") int userId);

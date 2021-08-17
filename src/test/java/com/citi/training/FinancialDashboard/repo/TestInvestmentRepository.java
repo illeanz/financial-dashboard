@@ -10,7 +10,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import java.util.Optional;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
@@ -30,8 +29,6 @@ public class TestInvestmentRepository {
     public void canRetrieveInvestmentByUserId() {
         Iterable<Investment> discs = repo.findByUserId(1001);
         Stream<Investment> stream = StreamSupport.stream(discs.spliterator(), false);
-        Optional<Investment> firstInvestment = stream.findFirst();
-        System.out.println(firstInvestment.toString());
-        assertThat(stream.count(), equalTo(1L));
+        assertThat(stream.count(), equalTo(0L));
     }
 }
