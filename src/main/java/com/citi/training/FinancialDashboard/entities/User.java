@@ -15,6 +15,11 @@ public class User  implements Serializable{
     @Column(name="password")
     private String password;
 
+    public User(int userId, String password) {
+        this.userId = userId;
+        this.password = password;
+    }
+
     public String getPassword() {
         return password;
     }

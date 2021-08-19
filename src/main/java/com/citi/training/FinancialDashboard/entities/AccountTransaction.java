@@ -25,6 +25,14 @@ public class AccountTransaction implements Serializable{
     @Column(name="value")
     private Double value;
 
+    public AccountTransaction(int transactionId, int accountId, Date date, String description, Double value) {
+        this.transactionId = transactionId;
+        this.accountId = accountId;
+        this.date = date;
+        this.description = description;
+        this.value = value;
+    }
+
     public int getAccountId() {
         return accountId;
     }

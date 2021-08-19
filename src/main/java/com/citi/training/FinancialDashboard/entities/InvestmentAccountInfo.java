@@ -18,6 +18,12 @@ public class InvestmentAccountInfo implements Serializable {
     @Column(name = "cash")
     private Double cash;
 
+    public InvestmentAccountInfo(int accountId, InvestmentType investmentType, Double cash) {
+        this.accountId = accountId;
+        this.investmentType = investmentType;
+        this.cash = cash;
+    }
+
     public int getAccountId() {
         return accountId;
     }
