@@ -30,7 +30,7 @@ CREATE TABLE `accounts` (
 
 CREATE TABLE `banking_acc_info` (
   `aid` int NOT NULL,
-  `banking_type` varchar(45) NOT NULL,
+  `banking_acc_type` varchar(45) NOT NULL,
   `interest_rate` double NOT NULL,
   PRIMARY KEY (`aid`),
   FOREIGN KEY (`aid`) REFERENCES `accounts` (`aid`) ON DELETE RESTRICT ON UPDATE CASCADE
@@ -38,7 +38,7 @@ CREATE TABLE `banking_acc_info` (
 
 CREATE TABLE `investment_acc_info` (
   `aid` int NOT NULL,
-  `investment_type` varchar(45) NOT NULL,
+  `investment_acc_type` varchar(45) NOT NULL,
   `cash` double NOT NULL,
   PRIMARY KEY (`aid`),
   FOREIGN KEY (`aid`) REFERENCES `accounts` (`aid`) ON DELETE RESTRICT ON UPDATE CASCADE
@@ -71,6 +71,25 @@ CREATE TABLE `account_transactions` (
   `value` double NOT NULL,
   PRIMARY KEY (`trans_id`),
   FOREIGN KEY (`aid`) REFERENCES `accounts` (`aid`) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE VIEW investment_accounts AS (
+	SELECT *
+    FROM accounts
+		INNER JOIN investment_acc_info using(aid)
+);
+
+CREATE VIEW banking_accounts AS (
+	SELECT *
+    FROM accounts 
+		INNER JOIN banking_acc_info using(aid)
+);
+
+CREATE VIEW investment_instruments AS (
+	SELECT inva.uid, inva.aid, inva.acc_name, inva.investment_acc_type, inv.symbol, inv.position, inv.avg_price, ins.instr_name, ins.instr_type, ins.market_price
+    FROM investments inv
+		INNER JOIN instruments ins ON inv.symbol = ins.symbol
+        INNER JOIN investment_accounts inva ON inv.aid = inva.aid
 );
 
 insert into users values(1001, "password1");

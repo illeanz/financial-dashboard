@@ -20,10 +20,10 @@ import static org.hamcrest.MatcherAssert.assertThat;
 @DataJpaTest // use an in memory database
 @ContextConfiguration(classes= FinancialDashboardApplication.class)
 @TestPropertySource(locations = "classpath:application-test.properties") // this is only needed because swagger breaks tests
-public class TestInvestmentRepository {
+public class TestInvestmentInstrumentRepository {
 
     @Autowired
-    private InvestmentRepository repo;
+    private InvestmentInstrumentRepository repo;
 
     @Test
     public void canRetrieveInvestmentByUserId() {
