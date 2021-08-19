@@ -20,6 +20,13 @@ public class Investment implements Serializable{
     @Column(name="avg_price")
     private double averagePrice;
 
+    public Investment(int accountId, String symbol, int position, double averagePrice) {
+        this.accountId = accountId;
+        this.symbol = symbol;
+        this.position = position;
+        this.averagePrice = averagePrice;
+    }
+
     public int getAccountId() {
         return accountId;
     }

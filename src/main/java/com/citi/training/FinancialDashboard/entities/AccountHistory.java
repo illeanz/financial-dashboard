@@ -20,6 +20,12 @@ public class AccountHistory implements Serializable{
     @Column(name="value")
     private Double value;
 
+    public AccountHistory(int accountId, Date date, Double value) {
+        this.accountId = accountId;
+        this.date = date;
+        this.value = value;
+    }
+
     public Date getDate() {
         return date;
     }

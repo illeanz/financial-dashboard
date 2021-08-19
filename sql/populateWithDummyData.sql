@@ -5,8 +5,8 @@ insert into accounts values(12345, 1001, "A's investment acc", "Investment", 300
 insert into accounts values(67890, 1001, "A's banking acc", "Banking", 5000.45);
 insert into accounts values(13579, 1001, "A's banking acc 2", "Banking", 75.90);
 
-insert into instruments values("GME", "GameStop", "stock", 150.00);
-insert into instruments values("TSLA", "Tesla", "stock", 150.00);
+insert into instruments values("GME", "GameStop", "Stock", 150.00);
+insert into instruments values("TSLA", "Tesla", "Stock", 150.00);
 insert into instruments values("VSP.TO", "VANGUARD SP 500 INDEX ETF CAD H", "ETF", 74.85);
 insert into instruments values("^MID", "S&P MID CAP 400 INDEX", "Index", 2734.01);
 insert into instruments values("JLGMX", "JPMorgan Large Cap Growth Fund", "Mutual Fund", 71.20);
@@ -17,7 +17,7 @@ insert into banking_acc_info values(13579, "Savings", 0.07);
 insert into investment_acc_info values(12345, "RRSP", 1000);
 
 insert into investments values(12345, "GME", 100, 140.00);
-insert into instruments values(12345, "VSP.TO", 200, 75.00);
+insert into investments values(12345, "VSP.TO", 200, 75.00);
 
 insert into account_history values(12345, '2021-08-31', 1000.00);
 insert into account_history values(12345, '2021-08-30', 900.00);
