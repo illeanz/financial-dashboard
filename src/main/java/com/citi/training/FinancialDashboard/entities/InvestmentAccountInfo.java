@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "investment_acc_info")
-public class InvestmentAccInfo implements Serializable {
+public class InvestmentAccountInfo implements Serializable {
 
     @Id
     @Column(name = "aid")

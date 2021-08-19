@@ -2,16 +2,14 @@ package com.citi.training.FinancialDashboard.entities;
 
 import org.hibernate.annotations.Immutable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 
 @Entity
 @Immutable
 @Table(name = "investment_instruments")
+@IdClass(InvestmentInstrumentPK.class)
 public class InvestmentInstrument implements Serializable {
 
     @Id
