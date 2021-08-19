@@ -27,7 +27,7 @@ public class TestInvestmentRepository {
 
     @Test
     public void canRetrieveInvestmentByUserId() {
-        Iterable<Investment> discs = repo.findByUserId(1001);
+        Iterable<Investment> discs = repo.findByAccountId(12345);
         Stream<Investment> stream = StreamSupport.stream(discs.spliterator(), false);
         assertThat(stream.count(), equalTo(0L));
     }
