@@ -2,6 +2,7 @@ package com.citi.training.FinancialDashboard.repo;
 
 import com.citi.training.FinancialDashboard.FinancialDashboardApplication;
 import com.citi.training.FinancialDashboard.entities.Investment;
+import com.citi.training.FinancialDashboard.entities.InvestmentInstrument;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,8 +28,15 @@ public class TestInvestmentInstrumentRepository {
 
     @Test
     public void canRetrieveInvestmentByUserId() {
-        Iterable<Investment> discs = repo.findByAccountId(12345);
-        Stream<Investment> stream = StreamSupport.stream(discs.spliterator(), false);
+        Iterable<InvestmentInstrument> discs = repo.findByUserId(1001);
+        Stream<InvestmentInstrument> stream = StreamSupport.stream(discs.spliterator(), false);
+        assertThat(stream.count(), equalTo(0L));
+    }
+
+    @Test
+    public void canRetrieveTopWinnersByAccountId() {
+        Iterable<InvestmentInstrument> discs = repo.findTopWinnersByAccountId(12345, 5);
+        Stream<InvestmentInstrument> stream = StreamSupport.stream(discs.spliterator(), false);
         assertThat(stream.count(), equalTo(0L));
     }
 }
