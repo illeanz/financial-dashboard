@@ -8,7 +8,7 @@ public interface UserService {
 
     Collection<User> getAllUsers();
 
-    Double getNetWorthByUserId(int userId);
+    Collection<Double> getNetWorthByUserId(int userId);
 
     Collection<User> getAllAccountsByUserId(int userId);
 

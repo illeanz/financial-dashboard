@@ -5,9 +5,7 @@ import com.citi.training.FinancialDashboard.entities.User;
 import com.citi.training.FinancialDashboard.service.UserService;
 import com.citi.training.FinancialDashboard.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 
@@ -23,17 +21,17 @@ public class UserController {
         return userService.getAllUsers();
     }
 
-    @GetMapping
-    public Double getNetWorthByUserId(int userId) {
+    @RequestMapping(method = RequestMethod.GET, value = "/{userId}")
+    public Collection<Double> getNetWorthByUserId(@PathVariable int userId) {
         return userService.getNetWorthByUserId(userId);
     }
 
-    @GetMapping
+    @RequestMapping(method = RequestMethod.GET, value = "/{id}/account/")
     public Collection<User> getAllAccountsByUserId(int userId) {
         return userService.getAllAccountsByUserId(userId);
     }
 
-    @GetMapping
+    @RequestMapping(method = RequestMethod.GET, value = "/{id}/account/investment")
     public Collection<User> getAllInvestmentAccountsByUserId(int userId) {
         return userService.getAllInvestmentAccountsByUserId(userId);
     }

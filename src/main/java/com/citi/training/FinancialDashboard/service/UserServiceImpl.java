@@ -19,7 +19,7 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public Double getNetWorthByUserId(int userId) {
+    public Collection<Double> getNetWorthByUserId(int userId) {
         return null;
     }
 
