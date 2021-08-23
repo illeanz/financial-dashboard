@@ -37,10 +37,15 @@ public class AccountServiceImpl implements AccountService{
 
     @Override
     public Account getAccountById(int aid) {
-        Optional<Account> temp = Optional.ofNullable(accountRepository.findByAccountId(aid));
+        Optional<Account> temp = Optional.ofNullable(accountRepository.findById(aid));
         if(!temp.isPresent())
             return temp.get();
         else
             return null;
+    }
+
+    @Override
+    public Collection<Account> getAllAccounts() {
+        return accountRepository.findAll();
     }
 }

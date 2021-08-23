@@ -26,16 +26,16 @@ public class UserController {
     @RequestMapping(method = RequestMethod.GET, value = "/{userId}")
     public @ResponseBody Double getNetWorthByUserId(@PathVariable int userId) {
         return userService.getNetWorthByUserId(userId);
-        //how to read from the table? compute?
+        //Computed for now instead of aggregation on the front end
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/{userId}/account/")
     public Collection<Account> getAllAccountsByUserId(@PathVariable int userId) {
         return userService.getAllAccountsByUserId(userId);
     }
-//
-//    @RequestMapping(method = RequestMethod.GET, value = "/{id}/account/investment")
-//    public Collection<User> getAllInvestmentAccountsByUserId(int userId) {
-//        return userService.getAllInvestmentAccountsByUserId(userId);
-//    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/{id}/account/investment")
+    public Collection<Account> getAllInvestmentAccountsByUserId(int userId) {
+        return userService.getAllInvestmentAccountsByUserId(userId);
+    }
 }

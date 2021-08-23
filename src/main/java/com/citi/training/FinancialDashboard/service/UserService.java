@@ -13,5 +13,5 @@ public interface UserService {
 
     Collection<Account> getAllAccountsByUserId(int userId);
 
-    Collection<User> getAllInvestmentAccountsByUserId(int userId);
+    Collection<Account> getAllInvestmentAccountsByUserId(int userId);
 }

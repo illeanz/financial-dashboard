@@ -17,4 +17,6 @@ public interface AccountService {
     Collection<Investment> getIndicesUserId(int userId);
 
     Account getAccountById(int aid);
+
+    public Collection<Account> getAllAccounts();
 }

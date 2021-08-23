@@ -22,8 +22,17 @@ public class Account implements Serializable {
     @Column(name="acc_type")
     private AccountType accountType;
 
+
     @Column(name="value")
-    private int value;
+    private Double value;
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public AccountType getAccountType() {
+        return accountType;
+    }
 
     public int getAccountId() {
         return accountId;
@@ -33,5 +42,7 @@ public class Account implements Serializable {
         this.accountId = accountId;
     }
 
-
+    public Double getValue() {
+        return value;
+    }
 }
