@@ -6,7 +6,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Collection;
 
 public interface InvestmentRepository extends JpaRepository<Investment, Integer> {
-    Iterable<Investment> findByAccountId(int i);
+
+    Iterable<Investment> findByAccountId(int id);
 
 
     //int getTotalInvestmentValueByUserId(int userId);

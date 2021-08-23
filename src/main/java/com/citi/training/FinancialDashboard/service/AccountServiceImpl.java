@@ -1,12 +1,20 @@
 package com.citi.training.FinancialDashboard.service;
 
+import com.citi.training.FinancialDashboard.entities.Account;
 import com.citi.training.FinancialDashboard.entities.Investment;
+import com.citi.training.FinancialDashboard.repo.AccountRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
+import java.util.Optional;
 
 @Service
 public class AccountServiceImpl implements AccountService{
+
+    @Autowired
+    private AccountRepository accountRepository;
+
     @Override
     public Collection<Investment> getTopGainersByUserId(int userId) {
         return null;
@@ -25,5 +33,14 @@ public class AccountServiceImpl implements AccountService{
     @Override
     public Collection<Investment> getIndicesUserId(int userId) {
         return null;
+    }
+
+    @Override
+    public Account getAccountById(int aid) {
+        Optional<Account> temp = Optional.ofNullable(accountRepository.findByAccountId(aid));
+        if(!temp.isPresent())
+            return temp.get();
+        else
+            return null;
     }
 }

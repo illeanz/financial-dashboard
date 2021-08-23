@@ -16,14 +16,11 @@ public class Account implements Serializable {
     @Column(name="uid")
     private int userId;
 
-    @Column(name="name")
+    @Column(name="acc_name")
     private String name;
 
     @Column(name="acc_type")
     private AccountType accountType;
-
-    @Column(name="date")
-    private Date date;
 
     @Column(name="value")
     private int value;

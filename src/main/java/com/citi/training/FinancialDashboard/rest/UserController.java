@@ -1,10 +1,12 @@
 package com.citi.training.FinancialDashboard.rest;
 
 
+import com.citi.training.FinancialDashboard.entities.Account;
 import com.citi.training.FinancialDashboard.entities.User;
 import com.citi.training.FinancialDashboard.service.UserService;
 import com.citi.training.FinancialDashboard.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
@@ -22,17 +24,18 @@ public class UserController {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/{userId}")
-    public Collection<Double> getNetWorthByUserId(@PathVariable int userId) {
+    public @ResponseBody Double getNetWorthByUserId(@PathVariable int userId) {
         return userService.getNetWorthByUserId(userId);
+        //how to read from the table? compute?
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/{id}/account/")
-    public Collection<User> getAllAccountsByUserId(int userId) {
+    @RequestMapping(method = RequestMethod.GET, value = "/{userId}/account/")
+    public Collection<Account> getAllAccountsByUserId(@PathVariable int userId) {
         return userService.getAllAccountsByUserId(userId);
     }
-
-    @RequestMapping(method = RequestMethod.GET, value = "/{id}/account/investment")
-    public Collection<User> getAllInvestmentAccountsByUserId(int userId) {
-        return userService.getAllInvestmentAccountsByUserId(userId);
-    }
+//
+//    @RequestMapping(method = RequestMethod.GET, value = "/{id}/account/investment")
+//    public Collection<User> getAllInvestmentAccountsByUserId(int userId) {
+//        return userService.getAllInvestmentAccountsByUserId(userId);
+//    }
 }
