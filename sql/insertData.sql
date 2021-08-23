@@ -1,3 +1,13 @@
+INSERT INTO users VALUES(1001, 'password1');
+INSERT INTO users VALUES(1002, 'password2');
+INSERT INTO accounts VALUES(12345, 1001, 'A investment acc', 'Investment', 80792.57);
+INSERT INTO accounts VALUES(67890, 1001, 'A banking acc', 'Banking', 5000.45);
+INSERT INTO accounts VALUES(13579, 1001, 'A banking acc 2', 'Banking', 75.90);
+INSERT INTO banking_acc_info VALUES(67890, 'Checking', 0.05);
+INSERT INTO banking_acc_info VALUES(13579, 'Savings', 0.07);
+INSERT INTO investment_acc_info VALUES(12345, 'RRSP', 1000);
+INSERT INTO account_transactions VALUES(13579, 67890, '2021-08-31', 'shopping', 'kids bday', -200.00);
+INSERT INTO account_transactions VALUES(24680, 67890, '2021-08-30', 'deposit', 'payday', 800.00);
 INSERT INTO instruments VALUES('GME', 'GameStop Corp.', 'Stock', 180.00999450683594);
 INSERT INTO instruments VALUES('TSLA', 'Tesla, Inc.', 'Stock', 606.4400024414062);
 INSERT INTO instruments VALUES('TR', 'Tootsie Roll Industries, Inc.', 'Stock', 31.592620849609375);
@@ -8,7 +18,6 @@ INSERT INTO instruments VALUES('AAPL', 'Apple Inc.', 'Stock', 126.90985107421875
 INSERT INTO instruments VALUES('FB', 'Facebook, Inc.', 'Stock', 324.6300048828125);
 INSERT INTO instruments VALUES('NOK', 'Nokia Corporation', 'Stock', 5.019999980926514);
 INSERT INTO instruments VALUES('AMC', 'AMC Entertainment Holdings, Inc.', 'Stock', 13.680000305175781);
-
 INSERT INTO account_history VALUES(12345, '2021-08-20', 80792.57);
 INSERT INTO account_history VALUES(12345, '2021-08-19', 80228.93);
 INSERT INTO account_history VALUES(12345, '2021-08-18', 81108.1);
@@ -72,3 +81,13 @@ INSERT INTO account_history VALUES(12345, '2021-05-27', 77140.09);
 INSERT INTO account_history VALUES(12345, '2021-05-26', 76272.23);
 INSERT INTO account_history VALUES(12345, '2021-05-25', 74844.94);
 INSERT INTO account_history VALUES(12345, '2021-05-24', 74325.75);
+INSERT INTO investments VALUES(12345, 'GME', 20, 3961.21);
+INSERT INTO investments VALUES(12345, 'TSLA', 30, 19633.35);
+INSERT INTO investments VALUES(12345, 'TR', 300, 10089.39);
+INSERT INTO investments VALUES(12345, 'SPY', 75, 32319.9);
+INSERT INTO investments VALUES(12345, 'AMD', 10, 918.48);
+INSERT INTO investments VALUES(12345, 'GOOG', 0.5, 1300.77);
+INSERT INTO investments VALUES(12345, 'AAPL', 30, 4161.06);
+INSERT INTO investments VALUES(12345, 'FB', 10, 3469.19);
+INSERT INTO investments VALUES(12345, 'NOK', 200, 1119.62);
+INSERT INTO investments VALUES(12345, 'AMC', 50, 2115.91);
