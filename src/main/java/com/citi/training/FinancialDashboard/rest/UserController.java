@@ -33,10 +33,24 @@ public class UserController {
         return userService.getUserById(userId);
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/{userId}/account/")
-    public Collection<Account> getAllAccountsByUserId(@PathVariable int userId) {
-        return userService.getAllAccountsByUserId(userId);
+    @RequestMapping(method = RequestMethod.POST)
+    public User addUser(@RequestBody User user) {
+        // Only for testing purposes, wasn't part of original plan
+        return userService.addNewUser(user);
     }
+
+    @RequestMapping(method = RequestMethod.DELETE, value = "/{userId}")
+    public void deleteUserByID(@PathVariable("userId") int userId) {
+        // Only for testing purposes, wasn't part of original plan
+        userService.deleteUserByID(userId);
+    }
+
+//    Both of these two endpoints to be added to accounts controller
+
+//    @RequestMapping(method = RequestMethod.GET, value = "/{userId}/account/")
+//    public Collection<Account> getAllAccountsByUserId(@PathVariable int userId) {
+//        return userService.getAllAccountsByUserId(userId);
+//    }
 
 //    @RequestMapping(method = RequestMethod.GET, value = "/{id}/account/investment")
 //    public Collection<Account> getAllInvestmentAccountsByUserId(int userId) {

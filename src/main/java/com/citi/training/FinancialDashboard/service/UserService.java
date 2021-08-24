@@ -16,4 +16,8 @@ public interface UserService {
     Collection<Account> getAllAccountsByUserId(int userId);
 
     Collection<Account> getAllInvestmentAccountsByUserId(int userId);
+
+    User addNewUser(User user);
+
+    void deleteUserByID(int userId);
 }
