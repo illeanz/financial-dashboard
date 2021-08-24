@@ -25,7 +25,7 @@ public class InvestmentAccount implements Serializable {
     private String accountName;
 
     @Column(name="acc_type")
-    private AccountType accountType;
+    private String accountType;
 
     @Column(name="value")
     private double value;
@@ -48,7 +48,7 @@ public class InvestmentAccount implements Serializable {
         return accountName;
     }
 
-    public AccountType getAccountType() {
+    public String getAccountType() {
         return accountType;
     }
 

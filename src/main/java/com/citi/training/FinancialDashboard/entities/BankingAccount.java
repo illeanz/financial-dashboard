@@ -25,7 +25,7 @@ public class BankingAccount implements Serializable {
     private String accountName;
 
     @Column(name="acc_type")
-    private AccountType accountType;
+    private String accountType;
 
     @Column(name="banking_acc_type")
     private BankingType bankingType;
@@ -45,7 +45,7 @@ public class BankingAccount implements Serializable {
         return accountName;
     }
 
-    public AccountType getAccountType() {
+    public String getAccountType() {
         return accountType;
     }
 

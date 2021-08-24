@@ -25,10 +25,10 @@ public class TestInvestmentRepository {
     @Autowired
     private InvestmentRepository repo;
 
-    @Test
-    public void canRetrieveInvestmentByUserId() {
-        Iterable<Investment> discs = repo.findByAccountId(12345);
-        Stream<Investment> stream = StreamSupport.stream(discs.spliterator(), false);
-        assertThat(stream.count(), equalTo(0L));
-    }
+   // @Test
+//    public void canRetrieveInvestmentByUserId() {
+//        Iterable<Investment> discs = repo.findByAccountId(12345);
+//        Stream<Investment> stream = StreamSupport.stream(discs.spliterator(), false);
+//        assertThat(stream.count(), equalTo(0L));
+//    }
 }

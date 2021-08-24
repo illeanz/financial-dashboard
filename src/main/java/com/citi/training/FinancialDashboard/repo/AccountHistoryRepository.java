@@ -2,7 +2,6 @@ package com.citi.training.FinancialDashboard.repo;
 
 import com.citi.training.FinancialDashboard.entities.AccountHistory;
 import com.citi.training.FinancialDashboard.entities.AccountHistoryPK;
-import com.citi.training.FinancialDashboard.entities.AccountType;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

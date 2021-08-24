@@ -1,0 +1,31 @@
+// User Endpoint tests
+
+curl --location --request GET 'http://localhost:8080/accounts/12345'
+
+curl --location --request GET 'http://localhost:8080/accounts'
+
+curl --location --request POST 'http://localhost:8080/accounts' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "accountId": "99999",
+    "userId": "1004",
+    "name": "aishwarya_test_account",
+    "accountType": "Banking",
+    "value": "50.0"
+}'
+
+curl --location --request DELETE 'http://localhost:8080/accounts/67891'
+
+// Account Endpoint tests
+
+curl --location --request GET 'http://localhost:8080/users'
+
+curl --location --request GET 'http://localhost:8080/users/1001'
+
+curl --location --request POST 'http://localhost:8080/users' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "password": "c0nygre"
+}'
+
+curl --location --request DELETE 'http://localhost:8080/users/1005'

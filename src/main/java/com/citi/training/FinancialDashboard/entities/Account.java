@@ -16,17 +16,40 @@ public class Account implements Serializable {
     @Column(name="uid")
     private int userId;
 
-    @Column(name="name")
+    @Column(name="acc_name")
     private String name;
 
     @Column(name="acc_type")
-    private AccountType accountType;
-
-    @Column(name="date")
-    private Date date;
+    private String accountType;
 
     @Column(name="value")
-    private int value;
+    private Double value;
+
+    public Account() {}
+
+    public Account(int accountId, int userId, String name, String accountType, Double value) {
+        this.accountId = accountId;
+        this.userId = userId;
+        this.name = name;
+        this.accountType = accountType;
+        this.value = value;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAccountType() {
+        return accountType;
+    }
 
     public int getAccountId() {
         return accountId;
@@ -36,5 +59,7 @@ public class Account implements Serializable {
         this.accountId = accountId;
     }
 
-
+    public Double getValue() {
+        return value;
+    }
 }
