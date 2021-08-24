@@ -21,11 +21,11 @@ public class UserController {
         return userService.getAllUsers();
     }
 
-//    @RequestMapping(method = RequestMethod.GET, value = "/{userId}")
-//    public @ResponseBody Double getNetWorthByUserId(@PathVariable int userId) {
-//        return userService.getNetWorthByUserId(userId);
-//        //Computed for now instead of aggregation on the front end
-//    }
+    @RequestMapping(method = RequestMethod.GET, value = "/networth/{userId}")
+    public @ResponseBody Double getNetWorthByUserId(@PathVariable int userId) {
+        return 100.0;
+        //Returning dummy value, aggregation will be computed front-end
+    }
 
     @RequestMapping(method = RequestMethod.GET, value = "/{userId}")
     public User getByUserId(@PathVariable int userId) {
