@@ -9,6 +9,8 @@ public interface UserService {
 
     Collection<User> getAllUsers();
 
+    User getUserById(int userId);
+
     Double getNetWorthByUserId(int userId);
 
     Collection<Account> getAllAccountsByUserId(int userId);

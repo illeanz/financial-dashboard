@@ -1,7 +1,6 @@
 package com.citi.training.FinancialDashboard.service;
 
 import com.citi.training.FinancialDashboard.entities.Account;
-import com.citi.training.FinancialDashboard.entities.AccountType;
 import com.citi.training.FinancialDashboard.entities.User;
 import com.citi.training.FinancialDashboard.repo.AccountRepository;
 import com.citi.training.FinancialDashboard.repo.InvestmentRepository;
@@ -12,6 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService{
@@ -40,6 +40,14 @@ public class UserServiceImpl implements UserService{
         return netwoth;
     }
 
+    public User getUserById(int userId) {
+        Optional<User> userOptional = userRepository.findById(userId);
+        if (userOptional.isPresent()) {
+            return userOptional.get();
+        }
+        else return null;
+    }
+
     @Override
     public Collection<Account> getAllAccountsByUserId(int userId) {
         List userIds = new ArrayList<Integer>();
@@ -55,12 +63,14 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public Collection<Account> getAllInvestmentAccountsByUserId(int userId) {
-        Collection<Account> matchingAccounts = getAllAccountsByUserId(userId);
-        for (Account account : matchingAccounts) {
-            if(account.getAccountType() == AccountType.Investment)
-                matchingAccounts.add(account);
-        }
-        return matchingAccounts;
+//        Collection<Account> matchingAccounts = getAllAccountsByUserId(userId);
+//        for (Account account : matchingAccounts) {
+//            if(account.getAccountType() == AccountType.Investment)
+//                matchingAccounts.add(account);
+//        }
+//        return matchingAccounts;
+
+        return null;
     }
 
 }

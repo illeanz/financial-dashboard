@@ -26,6 +26,16 @@ public class Account implements Serializable {
     @Column(name="value")
     private Double value;
 
+    public Account() {}
+
+    public Account(int accountId, int userId, String name, AccountType accountType, Double value) {
+        this.accountId = accountId;
+        this.userId = userId;
+        this.name = name;
+        //this.accountType = accountType;
+        this.value = value;
+    }
+
     public int getUserId() {
         return userId;
     }
