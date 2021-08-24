@@ -20,19 +20,18 @@ public class Account implements Serializable {
     private String name;
 
     @Column(name="acc_type")
-    private AccountType accountType;
-
+    private String accountType;
 
     @Column(name="value")
     private Double value;
 
     public Account() {}
 
-    public Account(int accountId, int userId, String name, AccountType accountType, Double value) {
+    public Account(int accountId, int userId, String name, String accountType, Double value) {
         this.accountId = accountId;
         this.userId = userId;
         this.name = name;
-        //this.accountType = accountType;
+        this.accountType = accountType;
         this.value = value;
     }
 
@@ -40,7 +39,15 @@ public class Account implements Serializable {
         return userId;
     }
 
-    public AccountType getAccountType() {
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAccountType() {
         return accountType;
     }
 

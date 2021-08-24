@@ -25,6 +25,16 @@ public class AccountController {
         return accountService.getAccountById(aid);
     }
 
+    @RequestMapping(method = RequestMethod.POST)
+    public Account addAccount(@RequestBody Account account) {
+        return accountService.addNewAccount(account);
+    }
+
+    @RequestMapping(method = RequestMethod.DELETE, value = "/{aid}")
+    public void deleteAccountByID(@PathVariable("aid") int aid) {
+        accountService.deleteAcountByID(aid);
+    }
+
 //    @GetMapping
 //    public Collection<Investment> getTopGainersByUserId(int userId, int index) {
 //        return accountService.getTopGainersByUserId(userId);

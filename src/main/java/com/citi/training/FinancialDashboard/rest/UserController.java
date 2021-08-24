@@ -1,6 +1,7 @@
 package com.citi.training.FinancialDashboard.rest;
 
 
+import com.citi.training.FinancialDashboard.entities.Account;
 import com.citi.training.FinancialDashboard.entities.User;
 import com.citi.training.FinancialDashboard.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,7 +43,7 @@ public class UserController {
     }
 
 //    Both of these two endpoints to be added to accounts controller
-
+//
 //    @RequestMapping(method = RequestMethod.GET, value = "/{userId}/account/")
 //    public Collection<Account> getAllAccountsByUserId(@PathVariable int userId) {
 //        return userService.getAllAccountsByUserId(userId);

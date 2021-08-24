@@ -19,4 +19,8 @@ public interface AccountService {
     Account getAccountById(int aid);
 
     public Collection<Account> getAllAccounts();
+
+    Account addNewAccount(Account account);
+
+    void deleteAcountByID(int aid);
 }
