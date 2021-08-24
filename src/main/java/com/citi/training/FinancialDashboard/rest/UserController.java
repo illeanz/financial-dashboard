@@ -1,7 +1,6 @@
 package com.citi.training.FinancialDashboard.rest;
 
 
-import com.citi.training.FinancialDashboard.entities.Account;
 import com.citi.training.FinancialDashboard.entities.User;
 import com.citi.training.FinancialDashboard.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,19 +28,16 @@ public class UserController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/{userId}")
     public User getByUserId(@PathVariable int userId) {
-        // Only for testing purposes, wasn't part of original plan
         return userService.getUserById(userId);
     }
 
     @RequestMapping(method = RequestMethod.POST)
     public User addUser(@RequestBody User user) {
-        // Only for testing purposes, wasn't part of original plan
         return userService.addNewUser(user);
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/{userId}")
     public void deleteUserByID(@PathVariable("userId") int userId) {
-        // Only for testing purposes, wasn't part of original plan
         userService.deleteUserByID(userId);
     }
 
