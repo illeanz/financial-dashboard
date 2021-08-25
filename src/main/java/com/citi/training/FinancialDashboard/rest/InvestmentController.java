@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Collection;
 import java.util.Date;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/investments")
 public class InvestmentController {
