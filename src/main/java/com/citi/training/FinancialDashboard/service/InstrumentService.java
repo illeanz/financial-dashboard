@@ -8,7 +8,12 @@ import java.util.Collection;
 
 @Service 
 public interface InstrumentService {
+
     Instrument findBySymbol(String symbol);
 
     Collection<Instrument> findByInstrumentType(InstrumentType instrumentType);
+
+    Instrument addBySymbol(Instrument instrument);
+
+    void deleteBySymbol(String symbol);
 }

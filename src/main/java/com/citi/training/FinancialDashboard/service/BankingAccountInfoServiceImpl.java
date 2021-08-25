@@ -27,13 +27,12 @@ public class BankingAccountInfoServiceImpl implements BankingAccountInfoService{
     }
 
     @Override
-    public Collection<BankingAccountInfo> findByAccountType(BankingType bankingType) {
-        Collection<BankingAccountInfo> allbankAccInfo = bankingAccountInfoRepository.findAll();
-        Collection<BankingAccountInfo> allbankAccInfoMatching = new ArrayList<>();
-        for (BankingAccountInfo a : allbankAccInfo) {
-            if (a.getBankingType() == bankingType)
-                allbankAccInfoMatching.add(a);
-        }
-        return allbankAccInfoMatching;
+    public Collection<BankingAccountInfo> findByBankingType(BankingType bankingType) {
+        return bankingAccountInfoRepository.findByBankingType(bankingType);
+    }
+
+    @Override
+    public Collection<BankingAccountInfo> findBankingAccInfoByUserId(int userId) {
+        return bankingAccountInfoRepository.findBankingAccInfoByUserId(userId);
     }
 }

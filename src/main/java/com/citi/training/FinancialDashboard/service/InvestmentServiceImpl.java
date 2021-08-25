@@ -27,6 +27,16 @@ public class InvestmentServiceImpl implements InvestmentService {
     }
 
     @Override
+    public Investment addInvestment(Investment investment) {
+        return investmentRepository.save(investment);
+    }
+
+    @Override
+    public void deleteInvestment(Investment investment) {
+        investmentRepository.delete(investment);
+    }
+
+    @Override
     public Collection<Investment> getInvestmentOverDateRange(int userId, Date start, Date end) {
         return null;
     }

@@ -23,4 +23,19 @@ public class InvestmentAccountInfoServiceImpl implements InvestmentAccountInfoSe
     public Collection<InvestmentAccountInfo> findByInvestmentType(InvestmentType investmentType) {
         return investmentAccountInfoRepository.findByInvestmentType(investmentType);
     }
+
+    @Override
+    public Collection<InvestmentAccountInfo> findByUserId(int userId) {
+        return investmentAccountInfoRepository.findByUserId(userId);
+    }
+
+    @Override
+    public InvestmentAccountInfo addInvestmentAccInfo(InvestmentAccountInfo investmentAccountInfo) {
+        return investmentAccountInfoRepository.save(investmentAccountInfo);
+    }
+
+    @Override
+    public void deleteInvestmentAccountInfoByAccountId(int aid) {
+        investmentAccountInfoRepository.deleteById(aid);
+    }
 }

@@ -11,5 +11,7 @@ public interface BankingAccountInfoService {
 
     BankingAccountInfo findByAccountId(int aid);
 
-    Collection<BankingAccountInfo> findByAccountType(BankingType bankingType);
+    Collection<BankingAccountInfo> findByBankingType(BankingType bankingType);
+
+    Collection<BankingAccountInfo> findBankingAccInfoByUserId(int userId);
 }

@@ -14,4 +14,8 @@ public interface InvestmentService {
     Collection<Investment> getInvestmentDetailBySymbol(int userId, String symbol);
 
     Collection<Investment> getInvestmentDetailBySymbolInRange(int userId, String symbol, Date start, Date end);
+
+    Investment addInvestment(Investment investment);
+
+    void deleteInvestment(Investment investment);
 }

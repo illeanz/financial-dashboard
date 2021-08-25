@@ -23,4 +23,14 @@ public class InstrumentServiceImpl implements  InstrumentService{
     public Collection<Instrument> findByInstrumentType(InstrumentType instrumentType) {
         return instrumentRepository.findByInstrumentType(instrumentType);
     }
+
+    @Override
+    public Instrument addBySymbol(Instrument instrument) {
+        return instrumentRepository.save(instrument);
+    }
+
+    @Override
+    public void deleteBySymbol(String symbol) {
+        instrumentRepository.deleteBySymbol(symbol);
+    }
 }
