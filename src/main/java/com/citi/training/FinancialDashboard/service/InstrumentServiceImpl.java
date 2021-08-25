@@ -2,6 +2,8 @@ package com.citi.training.FinancialDashboard.service;
 
 import com.citi.training.FinancialDashboard.entities.Instrument;
 import com.citi.training.FinancialDashboard.entities.InstrumentType;
+import com.citi.training.FinancialDashboard.repo.InstrumentRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -9,13 +11,16 @@ import java.util.Collection;
 @Service
 public class InstrumentServiceImpl implements  InstrumentService{
 
+    @Autowired
+    private InstrumentRepository instrumentRepository;
+
     @Override
     public Instrument findBySymbol(String symbol) {
-        return null;
+        return instrumentRepository.findBySymbol(symbol);
     }
 
     @Override
     public Collection<Instrument> findByInstrumentType(InstrumentType instrumentType) {
-        return null;
+        return instrumentRepository.findByInstrumentType(instrumentType);
     }
 }
