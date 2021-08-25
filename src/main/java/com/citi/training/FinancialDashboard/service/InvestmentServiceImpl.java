@@ -20,7 +20,7 @@ public class InvestmentServiceImpl implements InvestmentService {
     }
 
     @Override
-    public Collection<Investment> getInvestment() {
+    public Collection<Investment> getInvestment(int aid) {
         return null;
     }
 

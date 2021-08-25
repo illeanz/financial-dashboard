@@ -23,4 +23,6 @@ public interface AccountService {
     Account addNewAccount(Account account);
 
     void deleteAcountByID(int aid);
+
+    Collection<Account> findByAccountType(String accountType);
 }
