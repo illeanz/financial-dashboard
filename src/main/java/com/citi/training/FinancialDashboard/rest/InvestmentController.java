@@ -48,12 +48,12 @@ public class InvestmentController {
     }
 
     //InvestmentAccountInfo
-    @RequestMapping(method = RequestMethod.GET, value = "/investmentAcountInfo/{aid}")
+    @RequestMapping(method = RequestMethod.GET, value = "/investmentAccountInfo/{aid}")
     public InvestmentAccountInfo findByAccountId(int aid) {
         return investmentAccountInfoService.findByAccountId(aid);
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/investmentAcountInfo/{investmentType}")
+    @RequestMapping(method = RequestMethod.GET, value = "/investmentAccountInfo/{investmentType}")
     Collection<InvestmentAccountInfo> findByInvestmentType(InvestmentType investmentType) {
         return investmentAccountInfoService.findByInvestmentType(investmentType);
     }
