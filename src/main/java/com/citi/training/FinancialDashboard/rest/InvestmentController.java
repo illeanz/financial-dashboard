@@ -26,7 +26,7 @@ public class InvestmentController {
 
     // InvestmentAccount
     @RequestMapping(method = RequestMethod.GET, value = "/value/{userId}")
-    public @ResponseBody int getTotalInvestmentValueByUserId(int userId) {
+    public @ResponseBody Double getTotalInvestmentValueByUserId(int userId) {
         return investmentAccountService.getTotalInvestmentValueByUserId(userId);
     }
 
@@ -36,7 +36,7 @@ public class InvestmentController {
         return investmentService.getInvestment(aid);
     }
 
-    //Intrument
+    //Instrument
     @RequestMapping(method = RequestMethod.GET, value = "/instrument/{symbol}")
     public Instrument findBySymbol(String symbol) {
         return instrumentService.findBySymbol(symbol);

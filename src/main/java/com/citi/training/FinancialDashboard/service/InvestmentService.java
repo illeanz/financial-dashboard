@@ -7,8 +7,6 @@ import java.util.Date;
 
 public interface InvestmentService {
 
-    int getTotalInvestmentValueByUserId(int userId);
-
     Collection<Investment> getInvestment(int aid);
 
     Collection<Investment> getInvestmentOverDateRange(int userId, Date start, Date end);

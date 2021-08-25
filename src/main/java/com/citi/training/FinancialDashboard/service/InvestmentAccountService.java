@@ -5,5 +5,5 @@ import org.springframework.stereotype.Service;
 @Service
 public interface InvestmentAccountService {
 
-    int getTotalInvestmentValueByUserId(int userId);
+    Double getTotalInvestmentValueByUserId(int userId);
 }
