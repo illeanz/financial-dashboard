@@ -1,10 +1,12 @@
 package com.citi.training.FinancialDashboard.rest;
 
 import com.citi.training.FinancialDashboard.entities.Account;
+import com.citi.training.FinancialDashboard.entities.BankingAccount;
 import com.citi.training.FinancialDashboard.entities.BankingAccountInfo;
 import com.citi.training.FinancialDashboard.entities.BankingType;
 import com.citi.training.FinancialDashboard.service.AccountService;
 import com.citi.training.FinancialDashboard.service.BankingAccountInfoService;
+import com.citi.training.FinancialDashboard.service.BankingAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,6 +22,9 @@ public class AccountController {
 
     @Autowired
     private BankingAccountInfoService bankingAccountInfoService;
+
+    @Autowired
+    private BankingAccountService bankingAccountService;
 
     @GetMapping
     public Collection<Account> getAllAccounts() {
@@ -47,24 +52,30 @@ public class AccountController {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/{userId}")
-    public Collection<Account> findByAccountType(@PathVariable("userId") int userId) {
+    public Collection<Account> findAccountByUserId(@PathVariable("userId") int userId) {
         return accountService.findByUserId (userId);
     }
 
-    //Banking Account Info
-    @RequestMapping(method = RequestMethod.GET, value = "/bankingAccount/{aid}")
-    BankingAccountInfo findBankingAccountInfoByAccountId(@PathVariable("aid") int aid) {
+    //Banking Account Info----------------------------------------------------------------------------------------
+    @RequestMapping(method = RequestMethod.GET, value = "/bankingAccountInfo/{aid}")
+    public BankingAccountInfo findBankingAccountInfoByAccountId(@PathVariable("aid") int aid) {
         return bankingAccountInfoService.findByAccountId(aid);
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/bankingAccount/{userId}")
-    Collection<BankingAccountInfo> findBankingAccountInfoByUserId(@PathVariable("userId") int userId) {
+    @RequestMapping(method = RequestMethod.GET, value = "/bankingAccountInfo/{userId}")
+    public Collection<BankingAccountInfo> findBankingAccountInfoByUserId(@PathVariable("userId") int userId) {
         return bankingAccountInfoService.findBankingAccInfoByUserId(userId);
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/bankingAccount/{bankingType}")
-    Collection<BankingAccountInfo> findBankingAccountInfoByBankingType(@PathVariable("bankingType") BankingType bankingType) {
+    @RequestMapping(method = RequestMethod.GET, value = "/bankingAccountInfo/{bankingType}")
+    public Collection<BankingAccountInfo> findBankingAccountInfoByBankingType(@PathVariable("bankingType") BankingType bankingType) {
         return bankingAccountInfoService.findByBankingType(bankingType);
+    }
+
+    //Banking Account ----------------------------------------------------------------------------------------
+    @RequestMapping(method = RequestMethod.GET, value = "/bankingAccount")
+    public Collection<BankingAccount> findBankingAccountAll() {
+        return bankingAccountService.findBankingAccountAll();
     }
 
 
