@@ -44,6 +44,21 @@ public class InvestmentInstrument implements Serializable {
     @Column(name="market_price")
     private Double price;
 
+    public InvestmentInstrument(int accountId, String symbol, int userId, String accountName, InvestmentType investmentType, int position, double averagePrice, String value, InstrumentType instrumentType, Double price) {
+        this.accountId = accountId;
+        this.symbol = symbol;
+        this.userId = userId;
+        this.accountName = accountName;
+        this.investmentType = investmentType;
+        this.position = position;
+        this.averagePrice = averagePrice;
+        this.value = value;
+        this.instrumentType = instrumentType;
+        this.price = price;
+    }
+
+    public InvestmentInstrument() { }
+
     public int getUserId() {
         return userId;
     }

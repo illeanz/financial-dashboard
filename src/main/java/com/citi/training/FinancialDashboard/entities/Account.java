@@ -2,7 +2,6 @@ package com.citi.training.FinancialDashboard.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
 
 @Entity
 @Table(name = "accounts")
@@ -49,6 +48,15 @@ public class Account implements Serializable {
 
     public String getAccountType() {
         return accountType;
+    }
+
+    public Account(int accountId, int userId, String name, AccountType accountType, Date date, int value) {
+        this.accountId = accountId;
+        this.userId = userId;
+        this.name = name;
+        this.accountType = accountType;
+        this.date = date;
+        this.value = value;
     }
 
     public int getAccountId() {

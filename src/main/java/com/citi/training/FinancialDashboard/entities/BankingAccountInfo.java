@@ -18,6 +18,12 @@ public class BankingAccountInfo implements Serializable {
     @Column(name="interest_rate")
     private Double interestRate;
 
+    public BankingAccountInfo(int accountId, BankingType bankingType, Double interestRate) {
+        this.accountId = accountId;
+        this.bankingType = bankingType;
+        this.interestRate = interestRate;
+    }
+
     public int getAccountId() {
         return accountId;
     }

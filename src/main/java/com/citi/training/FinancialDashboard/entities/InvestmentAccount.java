@@ -36,6 +36,17 @@ public class InvestmentAccount implements Serializable {
     @Column(name="cash")
     private Double cash;
 
+
+    public InvestmentAccount(int accountId, int userId, String accountName, String accountType, double value, InvestmentType investmentType, Double cash) {
+        this.accountId = accountId;
+        this.userId = userId;
+        this.accountName = accountName;
+        this.accountType = accountType;
+        this.value = value;
+        this.investmentType = investmentType;
+        this.cash = cash;
+    }
+
     public int getAccountId() {
         return accountId;
     }
