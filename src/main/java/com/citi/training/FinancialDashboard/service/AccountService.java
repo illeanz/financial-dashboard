@@ -7,7 +7,6 @@ import java.util.Collection;
 
 public interface AccountService {
 
-
     Collection<Investment> getTopGainersByUserId(int userId);
 
     Collection<Investment> getTopLosersByUserId(int userId);
@@ -22,5 +21,9 @@ public interface AccountService {
 
     Account addNewAccount(Account account);
 
-    void deleteAcountByID(int aid);
+    void deleteAccountByID(int aid);
+
+    Collection<Account> findByAccountType(String accountType);
+
+    Collection<Account> findByUserId(int userId);
 }

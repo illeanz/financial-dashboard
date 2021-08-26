@@ -5,8 +5,10 @@ import com.citi.training.FinancialDashboard.repo.InvestmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class InvestmentServiceImpl implements InvestmentService {
@@ -14,14 +16,24 @@ public class InvestmentServiceImpl implements InvestmentService {
     @Autowired
     private InvestmentRepository investmentRepository;
 
-    @Override
+
     public int getTotalInvestmentValueByUserId(int userId) {
         return 0;
     }
 
     @Override
-    public Collection<Investment> getInvestment() {
-        return null;
+    public Collection<Investment> getInvestment(int aid) {
+        return investmentRepository.findByAccountId(aid);
+    }
+
+    @Override
+    public Investment addInvestment(Investment investment) {
+        return investmentRepository.save(investment);
+    }
+
+    @Override
+    public void deleteInvestment(Investment investment) {
+        investmentRepository.delete(investment);
     }
 
     @Override

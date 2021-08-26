@@ -1,16 +1,19 @@
-package com.citi.training.FinancialDashboard.repo;
+package com.citi.training.FinancialDashboard.service;
 
 import com.citi.training.FinancialDashboard.entities.Instrument;
 import com.citi.training.FinancialDashboard.entities.InstrumentType;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 
-public interface InstrumentRepository extends JpaRepository<Instrument, Integer> {
+@Service 
+public interface InstrumentService {
 
     Instrument findBySymbol(String symbol);
 
-    void deleteBySymbol(String symbol);
-
     Collection<Instrument> findByInstrumentType(InstrumentType instrumentType);
+
+    Instrument addBySymbol(Instrument instrument);
+
+    void deleteBySymbol(String symbol);
 }

@@ -7,7 +7,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Collection;
 
 public interface BankingAccountInfoRepository extends JpaRepository<BankingAccountInfo, Integer> {
-//    Collection<BankingAccountInfo> findByUserId(int userId);
+
+    Collection<BankingAccountInfo> findBankingAccInfoByUserId(int userId);
 
     BankingAccountInfo findByAccountId(int accountId);
 
