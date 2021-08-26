@@ -32,7 +32,7 @@ public class BankingAccount implements Serializable {
 
     @Column(name="interest_rate")
     private Double interestRate;
-
+    
     public BankingAccount(int accountId, int userId, String accountName, String accountType, BankingType bankingType, Double interestRate) {
         this.accountId = accountId;
         this.userId = userId;

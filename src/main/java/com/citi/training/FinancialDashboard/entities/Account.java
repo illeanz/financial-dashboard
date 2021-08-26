@@ -50,6 +50,15 @@ public class Account implements Serializable {
         return accountType;
     }
 
+    public Account(int accountId, int userId, String name, AccountType accountType, Date date, int value) {
+        this.accountId = accountId;
+        this.userId = userId;
+        this.name = name;
+        this.accountType = accountType;
+        this.date = date;
+        this.value = value;
+    }
+
     public int getAccountId() {
         return accountId;
     }
