@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.Collection;
 
-public interface InvestmentAccountRepository extends JpaRepository<BankingAccount, Integer> {
+public interface InvestmentAccountRepository extends JpaRepository<InvestmentAccount, Integer> {
 
     @Query(nativeQuery = true,
             value = "SELECT * " +

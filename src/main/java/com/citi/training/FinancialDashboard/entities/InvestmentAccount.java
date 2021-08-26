@@ -31,7 +31,7 @@ public class InvestmentAccount implements Serializable {
     private double value;
 
     @Column(name="investment_acc_type")
-    private InvestmentType investmentType;
+    private String investmentType;
 
     @Column(name="cash")
     private Double cash;
@@ -39,7 +39,7 @@ public class InvestmentAccount implements Serializable {
     public InvestmentAccount() {
     }
 
-    public InvestmentAccount(int accountId, int userId, String accountName, String accountType, double value, InvestmentType investmentType, Double cash) {
+    public InvestmentAccount(int accountId, int userId, String accountName, String accountType, double value, String investmentType, Double cash) {
         this.accountId = accountId;
         this.userId = userId;
         this.accountName = accountName;
@@ -69,7 +69,7 @@ public class InvestmentAccount implements Serializable {
         return value;
     }
 
-    public InvestmentType getInvestmentType() {
+    public String getInvestmentType() {
         return investmentType;
     }
 
