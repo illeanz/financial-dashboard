@@ -1,14 +1,12 @@
 package com.citi.training.FinancialDashboard.service;
 
-import com.citi.training.FinancialDashboard.entities.Account;
-import com.citi.training.FinancialDashboard.entities.BankingAccount;
-import com.citi.training.FinancialDashboard.entities.Investment;
 import com.citi.training.FinancialDashboard.entities.InvestmentAccount;
 import com.citi.training.FinancialDashboard.repo.InvestmentAccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
+import java.util.Collection;
+import java.util.Iterator;
 
 @Service
 public class InvestmentAccountServiceImpl implements InvestmentAccountService{
@@ -18,8 +16,9 @@ public class InvestmentAccountServiceImpl implements InvestmentAccountService{
 
     @Override
     public Double getTotalInvestmentValueByUserId(int userId) {
-        Double returnVal =  investmentAccountRepository.findByUserId(userId).getValue();
-        return returnVal;
+        InvestmentAccount returnVal =  investmentAccountRepository.findByUserId(userId);
+        double temp = returnVal.getValue();
+        return temp;
     }
 
     @Override
@@ -29,12 +28,9 @@ public class InvestmentAccountServiceImpl implements InvestmentAccountService{
     }
 
     @Override
-    public InvestmentAccount getInvestmentAccountByAccountId(int aid) {
-        Optional<InvestmentAccount> acc = Optional.ofNullable(investmentAccountRepository.findById(aid));
-        if (acc.isPresent())
-            return acc.get();
-        else
-            return null;
+    public InvestmentAccount getInvestmentAccountByAccountId(int accountId) {
+        Iterable<InvestmentAccount> returnVal = investmentAccountRepository.findByAccountId(accountId);
+        return returnVal.iterator().next();
     }
 
     @Override

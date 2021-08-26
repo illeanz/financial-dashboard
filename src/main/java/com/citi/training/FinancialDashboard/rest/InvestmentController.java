@@ -47,7 +47,8 @@ public class InvestmentController {
         return investmentAccountService.getTotalInvestmentValueByUserId(userId);
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/investmentAccount/{userId}")
+
+    @RequestMapping(method = RequestMethod.GET, value = "/investmentAccount/users/{userId}")
     public InvestmentAccount getInvestmentAccountByUserId(@PathVariable("userId") int userId) {
         return investmentAccountService.getInvestmentAccountByUserId(userId);
     }
@@ -69,8 +70,10 @@ public class InvestmentController {
 
     //Instrument---------------------------------------------------------------------------------------
     @RequestMapping(method = RequestMethod.GET, value = "/instrument/{symbol}")
+    @ResponseBody
     public Instrument findBySymbol(@PathVariable("symbol") String symbol) {
-        return instrumentService.findBySymbol(symbol);
+        Instrument returnVal =  instrumentService.findBySymbol(symbol);
+        return returnVal;
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/instrument")
@@ -83,8 +86,8 @@ public class InvestmentController {
         instrumentService.deleteBySymbol(symbol);
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/instrument/{instrumentType}")
-    public Collection<Instrument> findByInstrumentType(@PathVariable("instrumentType") InstrumentType instrumentType) {
+    @RequestMapping(method = RequestMethod.GET, value = "/instrument/type/{instrumentType}")
+    public Collection<Instrument> findByInstrumentType(@PathVariable("instrumentType") String instrumentType) {
         return instrumentService.findByInstrumentType(instrumentType);
     }
 
