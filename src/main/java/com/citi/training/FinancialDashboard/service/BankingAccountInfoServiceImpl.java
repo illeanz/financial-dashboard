@@ -6,7 +6,6 @@ import com.citi.training.FinancialDashboard.repo.BankingAccountInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Optional;
 
@@ -31,8 +30,8 @@ public class BankingAccountInfoServiceImpl implements BankingAccountInfoService{
         return bankingAccountInfoRepository.findByBankingType(bankingType);
     }
 
-    @Override
-    public Collection<BankingAccountInfo> findBankingAccInfoByUserId(int userId) {
-        return bankingAccountInfoRepository.findBankingAccInfoByUserId(userId);
-    }
+//    @Override
+//    public Collection<BankingAccountInfo> findBankingAccInfoByUserId(int userId) {
+//        return bankingAccountInfoRepository.findBankingAccInfoByUserId(userId);
+//    }
 }

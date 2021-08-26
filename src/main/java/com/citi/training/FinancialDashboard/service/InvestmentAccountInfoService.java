@@ -12,7 +12,7 @@ public interface InvestmentAccountInfoService {
 
     Collection<InvestmentAccountInfo> findByInvestmentType(InvestmentType investmentType);
 
-    Collection<InvestmentAccountInfo> findByUserId(int userId);
+    //Collection<InvestmentAccountInfo> findByUserId(int userId);
 
     InvestmentAccountInfo addInvestmentAccInfo(InvestmentAccountInfo investmentAccountInfo);
 

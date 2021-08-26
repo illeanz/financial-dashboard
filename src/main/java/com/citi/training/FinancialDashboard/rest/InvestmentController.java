@@ -57,7 +57,7 @@ public class InvestmentController {
         return investmentAccountService.getInvestmentAccountByAccountId(aid);
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST, value = "/investmentAccount")
     public InvestmentAccount addInvestmentAccount(@RequestBody InvestmentAccount investmentAccount) {
         return investmentAccountService.addInvestmentAccount(investmentAccount);
     }
@@ -73,7 +73,7 @@ public class InvestmentController {
         return instrumentService.findBySymbol(symbol);
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST, value = "/instrument")
     public Instrument addBySymbol(@RequestBody Instrument instrument) {
         return instrumentService.addBySymbol(instrument);
     }
@@ -94,7 +94,7 @@ public class InvestmentController {
         return investmentAccountInfoService.findByAccountId(aid);
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST, value = "/investmentAccountInfo")
     public InvestmentAccountInfo addInvestmentAccInfo(@RequestBody InvestmentAccountInfo investmentAccountInfo) {
         return investmentAccountInfoService.addInvestmentAccInfo(investmentAccountInfo);
     }
@@ -104,10 +104,10 @@ public class InvestmentController {
         investmentAccountInfoService.deleteInvestmentAccountInfoByAccountId(aid);
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/investmentAccountInfo/{userId}")
-    public Collection<InvestmentAccountInfo> findInvestmentAccountInfoByUserId(@PathVariable("userId") int aid) {
-        return investmentAccountInfoService.findByUserId(aid);
-    }
+//    @RequestMapping(method = RequestMethod.GET, value = "/investmentAccountInfo/{userId}")
+//    public Collection<InvestmentAccountInfo> findInvestmentAccountInfoByUserId(@PathVariable("userId") int aid) {
+//        return investmentAccountInfoService.findByUserId(aid);
+//    }
 
     @RequestMapping(method = RequestMethod.GET, value = "/investmentAccountInfo/{investmentType}")
     Collection<InvestmentAccountInfo> findByInvestmentType(@PathVariable("investmentType") InvestmentType investmentType) {
@@ -115,19 +115,19 @@ public class InvestmentController {
     }
 
     //----------------------------------
-    @GetMapping
-    public Collection<Investment> getInvestmentOverDateRange(int userId, Date start, Date end) {
-        return investmentService.getInvestmentOverDateRange(userId, start, end);
-    }
-
-    @GetMapping
-    public Collection<Investment> getInvestmentDetailBySymbol(int userId, String symbol) {
-        return investmentService.getInvestmentDetailBySymbol(userId, symbol);
-    }
-
-    @GetMapping
-    public Collection<Investment> getInvestmentDetailBySymbolInRange(int userId, String symbol, Date start, Date end) {
-        return investmentService.getInvestmentDetailBySymbolInRange(userId, symbol, start, end);
-    }
+//    @GetMapping
+//    public Collection<Investment> getInvestmentOverDateRange(int userId, Date start, Date end) {
+//        return investmentService.getInvestmentOverDateRange(userId, start, end);
+//    }
+//
+//    @GetMapping
+//    public Collection<Investment> getInvestmentDetailBySymbol(int userId, String symbol) {
+//        return investmentService.getInvestmentDetailBySymbol(userId, symbol);
+//    }
+//
+//    @GetMapping
+//    public Collection<Investment> getInvestmentDetailBySymbolInRange(int userId, String symbol, Date start, Date end) {
+//        return investmentService.getInvestmentDetailBySymbolInRange(userId, symbol, start, end);
+//    }
 
 }
