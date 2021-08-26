@@ -1,15 +1,14 @@
 package com.citi.training.FinancialDashboard.repo;
 
 import com.citi.training.FinancialDashboard.entities.InstrumentType;
-import com.citi.training.FinancialDashboard.entities.Investment;
 import com.citi.training.FinancialDashboard.entities.InvestmentInstrument;
-import com.citi.training.FinancialDashboard.entities.InvestmentInstrumentPK;
+import com.citi.training.FinancialDashboard.entities.InvestmentInstrumentId;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.Collection;
 
-public interface InvestmentInstrumentRepository extends JpaRepository<InvestmentInstrument, InvestmentInstrumentPK> {
+public interface InvestmentInstrumentRepository extends JpaRepository<InvestmentInstrument, InvestmentInstrumentId> {
 
     Collection<InvestmentInstrument> findByUserId(int userId);
 

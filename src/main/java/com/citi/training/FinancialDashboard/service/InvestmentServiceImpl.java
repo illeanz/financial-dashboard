@@ -22,13 +22,15 @@ public class InvestmentServiceImpl implements InvestmentService {
     }
 
     @Override
-    public Collection<Investment> getInvestment(int aid) {
-        return investmentRepository.findByAccountId(aid);
+    public Collection<Investment> getInvestment(int accountId) {
+        Collection<Investment> returnVal =  investmentRepository.findByAccountId(accountId);
+       return returnVal;
     }
 
     @Override
     public Investment addInvestment(Investment investment) {
-        return investmentRepository.save(investment);
+        Investment returnVal =  investmentRepository.save(investment);
+        return returnVal;
     }
 
     @Override

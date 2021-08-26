@@ -4,16 +4,16 @@ package com.citi.training.FinancialDashboard.entities;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class InvestmentInstrumentPK implements Serializable {
+public class InvestmentInstrumentId implements Serializable {
     private int accountId;
     private String symbol;
 
-    public InvestmentInstrumentPK(int accountId, String symbol) {
+    public InvestmentInstrumentId(int accountId, String symbol) {
         this.accountId = accountId;
         this.symbol = symbol;
     }
 
-    public InvestmentInstrumentPK(){}
+    public InvestmentInstrumentId(){}
 
     public int getAccountId() {
         return accountId;
@@ -35,8 +35,8 @@ public class InvestmentInstrumentPK implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || this.getClass() != o.getClass()) return false;
-        InvestmentInstrumentPK pk = (InvestmentInstrumentPK) o;
-        return Objects.equals(this.accountId, pk.accountId) && Objects.equals(this.symbol, ((InvestmentInstrumentPK) o).symbol);
+        InvestmentInstrumentId pk = (InvestmentInstrumentId) o;
+        return Objects.equals(this.accountId, pk.accountId) && Objects.equals(this.symbol, ((InvestmentInstrumentId) o).symbol);
     }
 
     @Override

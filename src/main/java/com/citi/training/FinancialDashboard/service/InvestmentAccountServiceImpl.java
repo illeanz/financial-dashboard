@@ -2,6 +2,7 @@ package com.citi.training.FinancialDashboard.service;
 
 import com.citi.training.FinancialDashboard.entities.Account;
 import com.citi.training.FinancialDashboard.entities.BankingAccount;
+import com.citi.training.FinancialDashboard.entities.Investment;
 import com.citi.training.FinancialDashboard.entities.InvestmentAccount;
 import com.citi.training.FinancialDashboard.repo.InvestmentAccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,12 +18,14 @@ public class InvestmentAccountServiceImpl implements InvestmentAccountService{
 
     @Override
     public Double getTotalInvestmentValueByUserId(int userId) {
-        return investmentAccountRepository.findByUserId(userId).getValue();
+        Double returnVal =  investmentAccountRepository.findByUserId(userId).getValue();
+        return returnVal;
     }
 
     @Override
     public InvestmentAccount getInvestmentAccountByUserId(int userId) {
-        return investmentAccountRepository.findByUserId(userId);
+        InvestmentAccount returnVal =  investmentAccountRepository.findByUserId(userId);
+        return returnVal;
     }
 
     @Override
@@ -36,7 +39,8 @@ public class InvestmentAccountServiceImpl implements InvestmentAccountService{
 
     @Override
     public InvestmentAccount addInvestmentAccount(InvestmentAccount investmentAccount) {
-        return investmentAccountRepository.save(investmentAccount);
+        InvestmentAccount returnVal =  investmentAccountRepository.save(investmentAccount);
+        return returnVal;
     }
 
     @Override

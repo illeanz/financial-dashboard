@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
+@IdClass(InvestmentId.class)
 @Table(name = "investments")
 public class Investment implements Serializable{
 
@@ -11,6 +12,7 @@ public class Investment implements Serializable{
     @Column(name="aid")
     private int accountId;
 
+    @Id
     @Column(name="symbol")
     private String symbol;
 
@@ -19,6 +21,16 @@ public class Investment implements Serializable{
 
     @Column(name="avg_price")
     private double averagePrice;
+
+    public Investment() {
+    }
+
+    public Investment(int accountId, String symbol, int position, double averagePrice) {
+        this.accountId = accountId;
+        this.symbol = symbol;
+        this.position = position;
+        this.averagePrice = averagePrice;
+    }
 
     public int getAccountId() {
         return accountId;

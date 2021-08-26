@@ -79,7 +79,7 @@ public class InvestmentController {
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/instrument/{symbol}")
-    public void addBySymbol(@PathVariable("symbol") String symbol) {
+    public void deleteBySymbol(@PathVariable("symbol") String symbol) {
         instrumentService.deleteBySymbol(symbol);
     }
 

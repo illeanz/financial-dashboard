@@ -20,4 +20,14 @@ public class Instrument {
 
     @Column(name="market_price")
     private Double price;
+
+    public Instrument() {
+    }
+
+    public Instrument(String symbol, String value, InstrumentType instrumentType, Double price) {
+        this.symbol = symbol;
+        this.value = value;
+        this.instrumentType = instrumentType;
+        this.price = price;
+    }
 }
