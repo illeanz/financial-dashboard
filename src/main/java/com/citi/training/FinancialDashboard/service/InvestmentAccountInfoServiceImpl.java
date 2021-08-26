@@ -24,10 +24,10 @@ public class InvestmentAccountInfoServiceImpl implements InvestmentAccountInfoSe
         return investmentAccountInfoRepository.findByInvestmentType(investmentType);
     }
 
-    @Override
-    public Collection<InvestmentAccountInfo> findByUserId(int userId) {
-        return investmentAccountInfoRepository.findByUserId(userId);
-    }
+//    @Override
+//    public Collection<InvestmentAccountInfo> findByUserId(int userId) {
+//        return investmentAccountInfoRepository.findByUserId(userId);
+//    }
 
     @Override
     public InvestmentAccountInfo addInvestmentAccInfo(InvestmentAccountInfo investmentAccountInfo) {

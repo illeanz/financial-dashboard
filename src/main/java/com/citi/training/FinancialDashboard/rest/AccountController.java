@@ -62,10 +62,10 @@ public class AccountController {
         return bankingAccountInfoService.findByAccountId(aid);
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/bankingAccountInfo/{userId}")
-    public Collection<BankingAccountInfo> findBankingAccountInfoByUserId(@PathVariable("userId") int userId) {
-        return bankingAccountInfoService.findBankingAccInfoByUserId(userId);
-    }
+//    @RequestMapping(method = RequestMethod.GET, value = "/bankingAccountInfo/{userId}")
+//    public Collection<BankingAccountInfo> findBankingAccountInfoByUserId(@PathVariable("userId") int userId) {
+//        return bankingAccountInfoService.findBankingAccInfoByUserId(userId);
+//    }
 
     @RequestMapping(method = RequestMethod.GET, value = "/bankingAccountInfo/{bankingType}")
     public Collection<BankingAccountInfo> findBankingAccountInfoByBankingType(@PathVariable("bankingType") BankingType bankingType) {
