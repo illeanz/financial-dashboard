@@ -16,6 +16,22 @@ public class InvestmentId implements Serializable {
         this.symbol = symbol;
     }
 
+    public int getAccountId() {
+        return accountId;
+    }
+
+    public void setAccountId(int accountId) {
+        this.accountId = accountId;
+    }
+
+    public String getSymbol() {
+        return symbol;
+    }
+
+    public void setSymbol(String symbol) {
+        this.symbol = symbol;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

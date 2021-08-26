@@ -4,8 +4,8 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@IdClass(InvestmentId.class)
 @Table(name = "investments")
+@IdClass(InvestmentId.class)
 public class Investment implements Serializable{
 
     @Id
@@ -30,6 +30,15 @@ public class Investment implements Serializable{
         this.symbol = symbol;
         this.position = position;
         this.averagePrice = averagePrice;
+    }
+
+    public InvestmentId getInvestmentId() {
+        return new InvestmentId(accountId, symbol);
+    }
+
+    public void setInvestmentId(InvestmentId investmentId) {
+        this.accountId = investmentId.getAccountId();
+        this.symbol = investmentId.getSymbol();
     }
 
     public int getAccountId() {

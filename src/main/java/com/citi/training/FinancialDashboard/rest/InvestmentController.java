@@ -36,6 +36,16 @@ public class InvestmentController {
         return investmentService.addInvestment(investment);
     }
 
+    @RequestMapping(method = RequestMethod.PUT, value = "/AvgPrice/{aid}/{symbol}")
+    public Investment modifyInvestmentAvgPrice(@PathVariable("aid") int aid, @PathVariable("symbol") String symbol, @RequestBody double avgPrice) {
+        return investmentService.modifyInvestmentAvgPrice(aid, symbol, avgPrice);
+    }
+
+    @RequestMapping(method = RequestMethod.PUT, value = "/Position/{aid}/{symbol}")
+    public Investment modifyInvestmentPosition(@PathVariable("aid") int aid, @PathVariable("symbol") String symbol, @RequestBody int position) {
+        return investmentService.modifyInvestmentPosition(aid, symbol, position);
+    }
+
     @RequestMapping(method = RequestMethod.DELETE)
     public void deleteInvestment(@RequestBody Investment investment) {
         investmentService.deleteInvestment(investment);

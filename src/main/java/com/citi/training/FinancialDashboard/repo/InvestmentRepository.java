@@ -18,4 +18,6 @@ public interface InvestmentRepository extends JpaRepository<Investment, Investme
 
     Collection<Investment> findByAccountId(int accountId);
 
+    Investment findByInvestmentId(InvestmentId investmentId);
+
 }
