@@ -18,4 +18,8 @@ public interface InvestmentService {
     Investment addInvestment(Investment investment);
 
     void deleteInvestment(Investment investment);
+
+    Investment modifyInvestmentAvgPrice(int accountId, String symbol, double avgPrice);
+
+    Investment modifyInvestmentPosition(int accountId, String symbol, int position);
 }

@@ -36,6 +36,16 @@ public class InvestmentController {
         return investmentService.addInvestment(investment);
     }
 
+    @RequestMapping(method = RequestMethod.PUT, value = "/AvgPrice")
+    public Investment modifyInvestmentAvgPrice(@RequestBody Investment investment) {
+        return investmentService.modifyInvestmentAvgPrice(investment.getAccountId(), investment.getSymbol(), investment.getAveragePrice());
+    }
+
+    @RequestMapping(method = RequestMethod.PUT, value = "/Position")
+    public Investment modifyInvestmentPosition(@RequestBody Investment investment) {
+        return investmentService.modifyInvestmentPosition(investment.getAccountId(), investment.getSymbol(), investment.getPosition());
+    }
+
     @RequestMapping(method = RequestMethod.DELETE)
     public void deleteInvestment(@RequestBody Investment investment) {
         investmentService.deleteInvestment(investment);
@@ -47,7 +57,8 @@ public class InvestmentController {
         return investmentAccountService.getTotalInvestmentValueByUserId(userId);
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/investmentAccount/{userId}")
+
+    @RequestMapping(method = RequestMethod.GET, value = "/investmentAccount/users/{userId}")
     public InvestmentAccount getInvestmentAccountByUserId(@PathVariable("userId") int userId) {
         return investmentAccountService.getInvestmentAccountByUserId(userId);
     }
@@ -69,8 +80,10 @@ public class InvestmentController {
 
     //Instrument---------------------------------------------------------------------------------------
     @RequestMapping(method = RequestMethod.GET, value = "/instrument/{symbol}")
+    @ResponseBody
     public Instrument findBySymbol(@PathVariable("symbol") String symbol) {
-        return instrumentService.findBySymbol(symbol);
+        Instrument returnVal =  instrumentService.findBySymbol(symbol);
+        return returnVal;
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/instrument")
@@ -79,12 +92,12 @@ public class InvestmentController {
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/instrument/{symbol}")
-    public void addBySymbol(@PathVariable("symbol") String symbol) {
+    public void deleteBySymbol(@PathVariable("symbol") String symbol) {
         instrumentService.deleteBySymbol(symbol);
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/instrument/{instrumentType}")
-    public Collection<Instrument> findByInstrumentType(@PathVariable("instrumentType") InstrumentType instrumentType) {
+    @RequestMapping(method = RequestMethod.GET, value = "/instrument/type/{instrumentType}")
+    public Collection<Instrument> findByInstrumentType(@PathVariable("instrumentType") String instrumentType) {
         return instrumentService.findByInstrumentType(instrumentType);
     }
 

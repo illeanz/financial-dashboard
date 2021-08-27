@@ -6,7 +6,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "account_history")
-@IdClass(AccountHistoryPK.class)
+@IdClass(AccountHistoryId.class)
 public class AccountHistory implements Serializable{
 
     @Id
@@ -19,6 +19,15 @@ public class AccountHistory implements Serializable{
 
     @Column(name="value")
     private Double value;
+
+    public AccountHistory() {
+    }
+
+    public AccountHistory(int accountId, Date date, Double value) {
+        this.accountId = accountId;
+        this.date = date;
+        this.value = value;
+    }
 
     public Date getDate() {
         return date;

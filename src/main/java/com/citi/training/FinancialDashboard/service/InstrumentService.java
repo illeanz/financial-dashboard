@@ -11,7 +11,7 @@ public interface InstrumentService {
 
     Instrument findBySymbol(String symbol);
 
-    Collection<Instrument> findByInstrumentType(InstrumentType instrumentType);
+    Collection<Instrument> findByInstrumentType(String instrumentType);
 
     Instrument addBySymbol(Instrument instrument);
 

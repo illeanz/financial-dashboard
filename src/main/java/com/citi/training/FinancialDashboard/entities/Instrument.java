@@ -16,8 +16,50 @@ public class Instrument {
     private String value;
 
     @Column(name="instr_type")
-    private InstrumentType instrumentType;
+    private String instrumentType;
 
     @Column(name="market_price")
     private Double price;
+
+    public Instrument() {
+    }
+
+    public Instrument(String symbol, String value, String instrumentType, Double price) {
+        this.symbol = symbol;
+        this.value = value;
+        this.instrumentType = instrumentType;
+        this.price = price;
+    }
+
+    public String getSymbol() {
+        return symbol;
+    }
+
+    public void setSymbol(String symbol) {
+        this.symbol = symbol;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    public String getInstrumentType() {
+        return instrumentType;
+    }
+
+    public void setInstrumentType(String instrumentType) {
+        this.instrumentType = instrumentType;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
 }

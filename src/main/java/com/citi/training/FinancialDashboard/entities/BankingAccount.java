@@ -33,6 +33,18 @@ public class BankingAccount implements Serializable {
     @Column(name="interest_rate")
     private Double interestRate;
 
+    public BankingAccount() {
+    }
+
+    public BankingAccount(int accountId, int userId, String accountName, String accountType, BankingType bankingType, Double interestRate) {
+        this.accountId = accountId;
+        this.userId = userId;
+        this.accountName = accountName;
+        this.accountType = accountType;
+        this.bankingType = bankingType;
+        this.interestRate = interestRate;
+    }
+
     public int getAccountId() {
         return accountId;
     }

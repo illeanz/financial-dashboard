@@ -12,5 +12,5 @@ public interface InstrumentRepository extends JpaRepository<Instrument, Integer>
 
     void deleteBySymbol(String symbol);
 
-    Collection<Instrument> findByInstrumentType(InstrumentType instrumentType);
+    Collection<Instrument> findByInstrumentType(String instrumentType);
 }

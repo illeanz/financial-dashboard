@@ -16,11 +16,12 @@ public class InstrumentServiceImpl implements  InstrumentService{
 
     @Override
     public Instrument findBySymbol(String symbol) {
-        return instrumentRepository.findBySymbol(symbol);
+        Instrument returnVal = instrumentRepository.findBySymbol(symbol);
+        return returnVal;
     }
 
     @Override
-    public Collection<Instrument> findByInstrumentType(InstrumentType instrumentType) {
+    public Collection<Instrument> findByInstrumentType(String instrumentType) {
         return instrumentRepository.findByInstrumentType(instrumentType);
     }
 

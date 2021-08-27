@@ -1,19 +1,20 @@
 package com.citi.training.FinancialDashboard.entities;
 
-
 import java.io.Serializable;
 import java.util.Objects;
 
-public class InvestmentInstrumentPK implements Serializable {
+public class InvestmentId implements Serializable {
     private int accountId;
+
     private String symbol;
 
-    public InvestmentInstrumentPK(int accountId, String symbol) {
+    public InvestmentId() {
+    }
+
+    public InvestmentId(int accountId, String symbol) {
         this.accountId = accountId;
         this.symbol = symbol;
     }
-
-    public InvestmentInstrumentPK(){}
 
     public int getAccountId() {
         return accountId;
@@ -34,13 +35,13 @@ public class InvestmentInstrumentPK implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || this.getClass() != o.getClass()) return false;
-        InvestmentInstrumentPK pk = (InvestmentInstrumentPK) o;
-        return Objects.equals(this.accountId, pk.accountId) && Objects.equals(this.symbol, ((InvestmentInstrumentPK) o).symbol);
+        if (!(o instanceof InvestmentId)) return false;
+        InvestmentId that = (InvestmentId) o;
+        return accountId == that.accountId && symbol.equals(that.symbol);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.accountId, this.symbol);
+        return Objects.hash(accountId, symbol);
     }
 }

@@ -5,16 +5,16 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
-public class AccountHistoryPK implements Serializable {
+public class AccountHistoryId implements Serializable {
     private int accountId;
     private Date date;
 
-    public AccountHistoryPK(int accountId, Date date) {
+    public AccountHistoryId(int accountId, Date date) {
         this.accountId = accountId;
         this.date = date;
     }
 
-    public AccountHistoryPK(){}
+    public AccountHistoryId(){}
 
     public int getAccountId() {
         return accountId;
@@ -36,8 +36,8 @@ public class AccountHistoryPK implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || this.getClass() != o.getClass()) return false;
-        AccountHistoryPK pk = (AccountHistoryPK) o;
-        return Objects.equals(this.accountId, pk.accountId) && Objects.equals(this.date, ((AccountHistoryPK) o).date);
+        AccountHistoryId pk = (AccountHistoryId) o;
+        return Objects.equals(this.accountId, pk.accountId) && Objects.equals(this.date, ((AccountHistoryId) o).date);
     }
 
     @Override

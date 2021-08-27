@@ -1,6 +1,7 @@
 package com.citi.training.FinancialDashboard.service;
 
 import com.citi.training.FinancialDashboard.entities.Investment;
+import com.citi.training.FinancialDashboard.entities.InvestmentId;
 import com.citi.training.FinancialDashboard.repo.InvestmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,18 +23,36 @@ public class InvestmentServiceImpl implements InvestmentService {
     }
 
     @Override
-    public Collection<Investment> getInvestment(int aid) {
-        return investmentRepository.findByAccountId(aid);
+    public Collection<Investment> getInvestment(int accountId) {
+        Collection<Investment> returnVal =  investmentRepository.findByAccountId(accountId);
+       return returnVal;
     }
 
     @Override
     public Investment addInvestment(Investment investment) {
-        return investmentRepository.save(investment);
+        Investment returnVal =  investmentRepository.save(investment);
+        return returnVal;
     }
 
     @Override
     public void deleteInvestment(Investment investment) {
         investmentRepository.delete(investment);
+    }
+
+    @Override
+    public Investment modifyInvestmentAvgPrice(int accountId, String symbol, double avgPrice) {
+        Investment retrieved = investmentRepository.findByInvestmentId(accountId, symbol);
+        retrieved.setAveragePrice(avgPrice);
+        investmentRepository.save(retrieved);
+        return retrieved;
+    }
+
+    @Override
+    public Investment modifyInvestmentPosition(int accountId, String symbol, int position) {
+        Investment retrieved = investmentRepository.findByInvestmentId(accountId, symbol);
+        retrieved.setPosition(position);
+        investmentRepository.save(retrieved);
+        return retrieved;
     }
 
     @Override
