@@ -31,7 +31,7 @@ public class AccountController {
         return accountService.getAllAccounts();
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/{aid}")
+    @RequestMapping(method = RequestMethod.GET, value = "/aid/{aid}")
     public Account getAccountById(@PathVariable("aid") int aid) {
         return accountService.getAccountById(aid);
     }
@@ -51,7 +51,7 @@ public class AccountController {
 //        return accountService.findByAccountType (accountType);
 //    }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/user/{userId}")
+    @RequestMapping(method = RequestMethod.GET, value = "/uid/{userId}")
     public Iterable<Account> findAccountByUserId(@PathVariable("userId") int userId) {
         return accountService.findByUserId (userId);
     }
