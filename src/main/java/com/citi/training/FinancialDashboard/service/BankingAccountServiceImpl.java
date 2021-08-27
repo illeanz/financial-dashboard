@@ -18,4 +18,9 @@ public class BankingAccountServiceImpl implements  BankingAccountService{
     public Collection<BankingAccount> findBankingAccountAll() {
         return bankingAccountRepository.findAll();
     }
+
+    @Override
+    public Collection<BankingAccount> findBankingAccountByUserId(int userId) {
+        return bankingAccountRepository.findByUserId(userId);
+    }
 }

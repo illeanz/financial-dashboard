@@ -12,7 +12,7 @@ public interface InvestmentAccountRepository extends JpaRepository<InvestmentAcc
             value = "SELECT * " +
                     "FROM investment_accounts ia " +
                     "WHERE ia.uid = :userId")
-    InvestmentAccount findByUserId(int userId);
+    Iterable<InvestmentAccount> findByUserId(int userId);
 
 
     @Query(nativeQuery = true,

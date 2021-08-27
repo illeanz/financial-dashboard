@@ -16,14 +16,15 @@ public class InvestmentAccountServiceImpl implements InvestmentAccountService{
 
     @Override
     public Double getTotalInvestmentValueByUserId(int userId) {
-        InvestmentAccount returnVal =  investmentAccountRepository.findByUserId(userId);
-        double temp = returnVal.getValue();
-        return temp;
+        Iterable<InvestmentAccount> returnVal =  investmentAccountRepository.findByUserId(userId);
+        Double sum = 0d;
+        returnVal.forEach(acc -> acc.getValue());
+        return sum;
     }
 
     @Override
-    public InvestmentAccount getInvestmentAccountByUserId(int userId) {
-        InvestmentAccount returnVal =  investmentAccountRepository.findByUserId(userId);
+    public Iterable<InvestmentAccount> getInvestmentAccountByUserId(int userId) {
+        Iterable<InvestmentAccount> returnVal =  investmentAccountRepository.findByUserId(userId);
         return returnVal;
     }
 

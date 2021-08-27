@@ -8,7 +8,7 @@ public interface InvestmentAccountService {
 
     Double getTotalInvestmentValueByUserId(int userId);
 
-    InvestmentAccount getInvestmentAccountByUserId(int userId);
+    Iterable<InvestmentAccount> getInvestmentAccountByUserId(int userId);
 
     InvestmentAccount getInvestmentAccountByAccountId(int aid);
 

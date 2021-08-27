@@ -78,6 +78,11 @@ public class AccountController {
         return bankingAccountService.findBankingAccountAll();
     }
 
+    @RequestMapping(method = RequestMethod.GET, value = "/bankingAccount/{userId}")
+    public Collection<BankingAccount> findBankingAccountByUserId(@PathVariable("userId") int userId) {
+        return bankingAccountService.findBankingAccountByUserId(userId);
+    }
+
 
 //    @GetMapping
 //    public Collection<Investment> getTopGainersByUserId(int userId, int index) {

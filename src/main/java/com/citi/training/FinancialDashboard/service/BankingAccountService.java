@@ -10,4 +10,6 @@ import java.util.Collection;
 public interface BankingAccountService {
 
     Collection<BankingAccount> findBankingAccountAll();
+    Collection<BankingAccount> findBankingAccountByUserId(int userId);
+
 }

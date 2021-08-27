@@ -4,6 +4,8 @@ import com.citi.training.FinancialDashboard.entities.*;
 import com.citi.training.FinancialDashboard.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import springfox.documentation.spring.web.json.Json;
 
 import java.util.Collection;
 import java.util.Date;
@@ -11,6 +13,7 @@ import java.util.Date;
 @CrossOrigin
 @RestController
 @RequestMapping("/investments")
+
 public class InvestmentController {
 
     @Autowired
@@ -59,7 +62,7 @@ public class InvestmentController {
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/investmentAccount/users/{userId}")
-    public InvestmentAccount getInvestmentAccountByUserId(@PathVariable("userId") int userId) {
+    public Iterable<InvestmentAccount> getInvestmentAccountByUserId(@PathVariable("userId") int userId) {
         return investmentAccountService.getInvestmentAccountByUserId(userId);
     }
 

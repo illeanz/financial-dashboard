@@ -10,4 +10,6 @@ import java.util.Collection;
 public interface BankingAccountRepository extends JpaRepository<BankingAccount, Integer> {
 
     BankingAccount findByAccountId(int accountId);
+
+    Collection<BankingAccount> findByUserId(int userId);
 }
