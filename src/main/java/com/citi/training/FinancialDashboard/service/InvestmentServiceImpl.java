@@ -41,8 +41,7 @@ public class InvestmentServiceImpl implements InvestmentService {
 
     @Override
     public Investment modifyInvestmentAvgPrice(int accountId, String symbol, double avgPrice) {
-        InvestmentId id = new InvestmentId(accountId, symbol);
-        Investment retrieved = investmentRepository.findByInvestmentId(id);
+        Investment retrieved = investmentRepository.findByInvestmentId(accountId, symbol);
         retrieved.setAveragePrice(avgPrice);
         investmentRepository.save(retrieved);
         return retrieved;
@@ -50,8 +49,7 @@ public class InvestmentServiceImpl implements InvestmentService {
 
     @Override
     public Investment modifyInvestmentPosition(int accountId, String symbol, int position) {
-        InvestmentId id = new InvestmentId(accountId, symbol);
-        Investment retrieved = investmentRepository.findByInvestmentId(id);
+        Investment retrieved = investmentRepository.findByInvestmentId(accountId, symbol);
         retrieved.setPosition(position);
         investmentRepository.save(retrieved);
         return retrieved;
