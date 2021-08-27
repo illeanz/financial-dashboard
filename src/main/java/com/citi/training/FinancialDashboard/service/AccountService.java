@@ -23,7 +23,7 @@ public interface AccountService {
 
     void deleteAccountByID(int aid);
 
-    Collection<Account> findByAccountType(String accountType);
+    Iterable<Account> findByAccountType(String accountType);
 
-    Collection<Account> findByUserId(int userId);
+    Iterable<Account> findByUserId(int userId);
 }

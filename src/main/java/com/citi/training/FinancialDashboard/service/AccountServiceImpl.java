@@ -60,12 +60,12 @@ public class AccountServiceImpl implements AccountService{
         accountRepository.delete(toBeDeleted);
     }
 
-    public Collection<Account> findByAccountType(String accountType) {
+    public Iterable<Account> findByAccountType(String accountType) {
         return accountRepository.findByAccountType(accountType);
     }
 
     @Override
-    public Collection<Account> findByUserId(int userId) {
+    public Iterable<Account> findByUserId(int userId) {
         return accountRepository.findByUserId(userId);
     }
 }

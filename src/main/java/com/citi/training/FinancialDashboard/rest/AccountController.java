@@ -46,13 +46,13 @@ public class AccountController {
         accountService.deleteAccountByID(aid);
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/{accountType}")
-    public Collection<Account> findByAccountType(@PathVariable("accountType") String accountType) {
-        return accountService.findByAccountType (accountType);
-    }
+//    @RequestMapping(method = RequestMethod.GET, value = "/{accountType}")
+//    public Collection<Account> findByAccountType(@PathVariable("accountType") String accountType) {
+//        return accountService.findByAccountType (accountType);
+//    }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/{userId}")
-    public Collection<Account> findAccountByUserId(@PathVariable("userId") int userId) {
+    @RequestMapping(method = RequestMethod.GET, value = "/user/{userId}")
+    public Iterable<Account> findAccountByUserId(@PathVariable("userId") int userId) {
         return accountService.findByUserId (userId);
     }
 
