@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS conygre;
-CREATE DATABASE IF NOT EXISTS conygre;
-use conygre;
+DROP DATABASE IF EXISTS financial;
+CREATE DATABASE IF NOT EXISTS financial;
+use financial;
 
 CREATE TABLE `instruments` (
   `symbol` varchar(45) NOT NULL,
